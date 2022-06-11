@@ -1,4 +1,4 @@
-
+import { topicTable } from "../data/topicTable"
 export class Person {
     gender : string // {"male", "female"}
     country : string // {"Australia", "Brazil", "France", "Other"}
@@ -20,8 +20,7 @@ export class Person {
         else return 'adult';
     } 
 
-/*     getTopic() : string {
-
+     getTopic() : string {
+        return topicTable[this.country][this.ageRange][this.gender];
     }
- */
 }

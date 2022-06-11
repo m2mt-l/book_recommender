@@ -9,18 +9,9 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PersonInputComponent,
-    BookListComponent,
-    BookDetailComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

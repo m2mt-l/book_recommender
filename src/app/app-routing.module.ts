@@ -5,9 +5,9 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 
 const routes: Routes = [
-    { path: 'person-input', component: PersonInputComponent},
-    { path: 'book-list', component: BookListComponent},
-    { path: 'book-detail', component: BookDetailComponent},
+    { path: 'person-input', component: PersonInputComponent },
+    { path: 'book-list', component: BookListComponent },
+    { path: 'book-detail', component: BookDetailComponent },
 ];
 
 @NgModule({

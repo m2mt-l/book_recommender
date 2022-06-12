@@ -1,8 +1,8 @@
-export const topicTable: {[key: string]: {[key: string]: {[key: string]: string}}} = {
+export const topicTable: { [key: string]: { [key: string]: { [key: string]: string } } } = {
     France: {
         child: {
             male: 'Dinosaurs',
-            female: 'Ballet',            
+            female: 'Ballet',
         },
         teen: {
             male: 'Bicycles',
@@ -24,14 +24,14 @@ export const topicTable: {[key: string]: {[key: string]: {[key: string]: string}
         },
         adult: {
             male: 'Football',
-            female: 'Jewelry'
+            female: 'Jewelry',
         },
     },
     Australia: {
         child: {
             male: 'Spiders',
             female: 'Geology',
-        }, 
+        },
         teen: {
             male: 'Rugby',
             female: 'Fencing',
@@ -41,4 +41,4 @@ export const topicTable: {[key: string]: {[key: string]: {[key: string]: string}
             female: 'Sculpture',
         },
     },
-}
+};

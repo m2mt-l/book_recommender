@@ -8,9 +8,16 @@ import { PersonInputComponent } from './person-input/person-input.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
     declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

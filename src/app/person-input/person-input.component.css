@@ -1,0 +1,12 @@
+.personInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.personInfoText {
+    padding: 0;
+    margin-top: 2rem;
+    text-align: left;
+}

@@ -11,7 +11,11 @@ export class PersonInputComponent implements OnInit {
 
     constructor(private personService: PersonService) {
         personService.personSubject?.subscribe(personSubject => this.person = personSubject);
+        
     }
 
+    getPerson(): void {
+        this.personService.setStaticPerson1();
+    }
     ngOnInit(): void {}
 }

@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { Person } from '../app/model/person'
+import { Person } from '../app/model/person';
+import { HttpClient } from '@angular/common/http';
+
+export interface Config {
+    gender: string;
+    country: string;
+    age: number;
+    imageURL: string;
+}
 @Injectable({
     providedIn: 'root',
 })
 export class PersonService {
     personSubject?: Subject<Person>
+    url: string = 'https://randomuser.me/api/?inc=gender,location,dob,picture';
 
-    constructor() {
+    constructor(private http: HttpClient) {
         this.personSubject = new Subject();
     }
 
@@ -25,5 +34,9 @@ export class PersonService {
 
     setPerson(person: Person): void {
         this.personSubject?.next(person);
+    }
+
+    setRandomPerson(): Observable<any>{
+        return this.http.get(this.url, { observe: 'body', responseType: 'json' });
     }
 }

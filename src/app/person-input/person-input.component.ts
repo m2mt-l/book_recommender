@@ -17,5 +17,9 @@ export class PersonInputComponent implements OnInit {
     getPerson(): void {
         this.personService.setStaticPerson1();
     }
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        let testLog: any;
+        this.personService.setRandomPerson().subscribe((resp: any) => console.log(resp.results[0]));
+        console.log(testLog);
+    }
 }

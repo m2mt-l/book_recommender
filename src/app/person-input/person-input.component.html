@@ -27,7 +27,13 @@
         </mat-form-field>
     </div>
     <div class="getPersonButton">
-        <button mat-raised-button color="primary" (click)="getStaticPerson()">
+        <button
+            mat-raised-button
+            color="primary"
+            routerLink="/book-list"
+            routerLinkActive="active-link"
+            (click)="getStaticPerson()"
+        >
             Get Static Person
         </button>
         <button mat-raised-button color="primary" (click)="getRandomPerson()">

@@ -39,7 +39,7 @@ export class PersonService {
     setRandomPerson(): void {
         this.getRandomPerson().subscribe((data: any) => (this.gender = data.gender));
         this.getRandomPerson().subscribe((data: any) => (this.country = data.location.country));
-        this.getRandomPerson().subscribe((data: any) => (this.imgUrl = data.picture.medium));
+        this.getRandomPerson().subscribe((data: any) => (this.imgUrl = data.picture.large));
         this.getRandomPerson().subscribe((data: any) => (this.age = data.dob.age));
 
         const person: Person = new Person(this.gender, this.country, this.imgUrl, this.age);

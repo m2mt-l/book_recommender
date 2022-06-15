@@ -1,1 +1,37 @@
-<p>person-input works!</p>
+<div class="personInfo">
+    <div class="personInfoText">
+        <h2>Person</h2>
+        <img class="picture" src="{{ person?.imageURL }}" />
+        <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let gender of genders" [value]="gender">
+                    {{ gender }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>Gender: {{ person?.gender }}</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Country</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let country of countries" [value]="country">
+                    {{ country }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p>Country: {{ person?.country }}</p>
+        <p>Age: {{ person?.age }}</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" min="1" max="100" #input required />
+        </mat-form-field>
+    </div>
+    <div class="getPersonButton">
+        <button mat-raised-button color="primary" (click)="getStaticPerson()">
+            Get Static Person
+        </button>
+        <button mat-raised-button color="primary" (click)="getRandomPerson()">
+            Get Random Person
+        </button>
+    </div>
+</div>

@@ -6,9 +6,11 @@ export class Person {
     age: number;
     ageRange: string; // {"child", "teen". "adult"}
 
+    countryList: string[] = ['Australia', 'Brazil', 'France'];
+
     constructor(gender: string, country: string, imageURL: string, age: number) {
         (this.gender = gender),
-            (this.country = country),
+            (this.country = this.modifyCountry(country)),
             (this.imageURL = imageURL),
             (this.ageRange = this.getAgeRange(age));
         this.age = age;
@@ -22,5 +24,10 @@ export class Person {
 
     getTopic(): string {
         return topicTable[this.country][this.ageRange][this.gender];
+    }
+
+    modifyCountry(country: string): string {
+        if (this.countryList.includes(country)) return country;
+        else return 'Other';
     }
 }

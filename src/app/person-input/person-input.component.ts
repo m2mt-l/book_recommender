@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../person.service';
+import { BookService } from '../book.service';
 import { Person } from '../model/person';
 import { Observable } from 'rxjs';
 import { config } from '../data/config';
@@ -13,12 +14,13 @@ export class PersonInputComponent implements OnInit {
     genders: string[] = config.genders;
     countries: string[] = config.countries;
 
-    constructor(private personService: PersonService) {
+    constructor(private personService: PersonService, private bookService: BookService) {
         personService.personSubject?.subscribe((personSubject) => (this.person = personSubject));
     }
 
     getStaticPerson(): void {
         this.personService.setStaticPerson1();
+        this.bookService.getBookList('Dinosaurs');
     }
 
     getRandomPerson(): void {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../person.service';
-import { Person } from '../model/person'
+import { Person } from '../model/person';
+import { Observable } from 'rxjs';
 @Component({
     selector: 'app-person-input',
     templateUrl: './person-input.component.html',
@@ -10,16 +11,15 @@ export class PersonInputComponent implements OnInit {
     person?: Person;
 
     constructor(private personService: PersonService) {
-        personService.personSubject?.subscribe(personSubject => this.person = personSubject);
-        
+        personService.personSubject?.subscribe((personSubject) => (this.person = personSubject));
     }
 
-    getPerson(): void {
+    getStaticPerson(): void {
         this.personService.setStaticPerson1();
     }
-    ngOnInit(): void {
-        let testLog: any;
-        this.personService.setRandomPerson().subscribe((resp: any) => console.log(resp.results[0]));
-        console.log(testLog);
+
+    getRandomPerson(): void {
+        this.personService.setRandomPerson();
     }
+    ngOnInit(): void {}
 }

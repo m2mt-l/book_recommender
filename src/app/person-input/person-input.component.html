@@ -1,11 +1,15 @@
 <div class="personInfo">
     <div class="personInfoText">
-        <p>Gender: {{person?.gender}}</p>
-        <p>Country: {{person?.country}}</p>
-        <p>Age: {{person?.age}}</p>
+        <p>Gender: {{ person?.gender }}</p>
+        <p>Country: {{ person?.country }}</p>
+        <p>Age: {{ person?.age }}</p>
     </div>
     <div class="getPersonButton">
-        <button mat-raised-button color="primary" (click)="getPerson()">Get Static Person</button>
-        <button mat-raised-button color="primary">Get Random Person</button>
+        <button mat-raised-button color="primary" (click)="getStaticPerson()">
+            Get Static Person
+        </button>
+        <button mat-raised-button color="primary" (click)="getRandomPerson()">
+            Get Random Person
+        </button>
     </div>
 </div>

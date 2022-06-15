@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../person.service';
 import { Person } from '../model/person';
 import { Observable } from 'rxjs';
+import { config } from '../data/config';
 @Component({
     selector: 'app-person-input',
     templateUrl: './person-input.component.html',
@@ -9,6 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class PersonInputComponent implements OnInit {
     person?: Person;
+    genders: string[] = config.genders;
+    countries: string[] = config.countries;
 
     constructor(private personService: PersonService) {
         personService.personSubject?.subscribe((personSubject) => (this.person = personSubject));

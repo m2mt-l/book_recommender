@@ -1,3 +1,7 @@
-<div *ngFor="let book of getAllBookList()">
+<div *ngFor="let book of getAllBookList(); let i = index" [attr.data-index]="i">
     <h4>{{ book.title }}, {{ book.author }}, {{ book.pubDate }}</h4>
 </div>
+
+<!-- routerLink="/book-list"
+routerLinkActive="active-link"
+ -->

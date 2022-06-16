@@ -42,16 +42,24 @@ export class BookService {
 
     setBookInfo(data: any): void {
         console.log(data);
+
+        if(this.bookList.length != 0) this.bookList = [];
+
         for (let i of data) {
             this.book = {
                 title: i.title,
                 author: i.author_name[0],
                 publisher: i.publisher[0],
                 pubDate: i.publish_date[0],
-                isbn: i.isbn,
+                isbn: this.setIsbn(i.isbn),
             };
             this.bookList.push(this.book);
         }
         console.log(this.bookList);
+    }
+
+    setIsbn(isbn: any): number{
+        if(isbn === undefined) return -1;
+        else return isbn[0];
     }
 }

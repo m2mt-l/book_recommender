@@ -20,7 +20,7 @@ export class PersonInputComponent implements OnInit {
 
     getStaticPerson(): void {
         this.personService.setStaticPerson1();
-        this.bookService.getBookList('Dinosaurs');
+        this.bookService.getBookList('Law');
     }
 
     getRandomPerson(): void {

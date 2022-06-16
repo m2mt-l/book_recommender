@@ -1,1 +1,3 @@
-<h2>Matching Book List</h2>
+<div *ngFor="let book of getAllBookList()">
+    <h4>{{ book.title }}, {{ book.author }}, {{ book.pubDate }}</h4>
+</div>

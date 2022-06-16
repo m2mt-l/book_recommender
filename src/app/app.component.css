@@ -10,3 +10,13 @@
     display: flex;
     justify-content: space-around;
 }
+
+.bookList {
+    display: flex;
+    flex-direction: column;
+}
+
+.bookDetail {
+    display: flex;
+    flex-direction: column;
+}

@@ -8,7 +8,15 @@ import { Book } from './model/book';
 })
 export class BookService {
     bookList: Book[] = [];
-    url: string = 'http://openlibrary.org/search.json?q=';
+    url: string = 'http://openlibrary.org/search.json?title=';
+
+    book: Book = {
+        title: '',
+        author: '',
+        publisher: '',
+        pubDate: '',
+        isbn: 0,
+    };
 
     constructor(private http: HttpClient) {}
 
@@ -25,10 +33,25 @@ export class BookService {
     }
 
     getBookList(topic: string): void {
-        const url = this.url + topic;
+        const url = this.url + topic + '&limit=5';
         this.http
             .get<Book>(url, { observe: 'body', responseType: 'json' })
             .pipe(map((data: any) => data.docs))
-            .subscribe((data: any) => console.log(data));
+            .subscribe((data: any) => this.setBookInfo(data));
+    }
+
+    setBookInfo(data: any): void {
+        console.log(data);
+        for (let i of data) {
+            this.book = {
+                title: i.title,
+                author: i.author_name[0],
+                publisher: i.publisher[0],
+                pubDate: i.publish_date[0],
+                isbn: i.isbn,
+            };
+            this.bookList.push(this.book);
+        }
+        console.log(this.bookList);
     }
 }

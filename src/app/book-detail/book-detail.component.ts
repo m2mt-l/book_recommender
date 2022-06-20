@@ -9,21 +9,28 @@ import { BookService } from '../book.service';
     styleUrls: ['./book-detail.component.css'],
 })
 export class BookDetailComponent implements OnInit {
-
-    book!: Book;
+    book$!: Observable<Book>;
 
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        public bookService: BookService,
+        public bookService: BookService
     ) {}
 
     ngOnInit(): void {
-
-        this.route.data.subscribe(data => {
+        this.book$ = this.route.paramMap.pipe(
+            switchMap((params: ParamMap) => this.bookService.get(Number(params.get('id')!)))
+        );
+        /*         this.route.data.subscribe((data) => {
             const book: Book = data[0];
             console.log(book);
-            this.book = book
-        });
+            this.book = book;
+        }); */
+    }
+
+    subscribeBook(): Book {
+        let book: any;
+        this.book$.subscribe((x) => (book = x));
+        return book;
     }
 }

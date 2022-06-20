@@ -28,8 +28,8 @@ export class BookService {
         return this.bookList;
     }
 
-    get(index: number): Book {
-        return this.bookList[index];
+    get(index: number): Observable<Book> {
+        return of(this.bookList[index]);
     }
 
     getBookList(topic: string): void {
@@ -43,7 +43,7 @@ export class BookService {
     setBookInfo(data: any): void {
         console.log(data);
 
-        if(this.bookList.length != 0) this.bookList = [];
+        if (this.bookList.length != 0) this.bookList = [];
 
         for (let i of data) {
             this.book = {
@@ -58,8 +58,8 @@ export class BookService {
         console.log(this.bookList);
     }
 
-    setIsbn(isbn: any): number{
-        if(isbn === undefined) return -1;
+    setIsbn(isbn: any): number {
+        if (isbn === undefined) return -1;
         else return isbn[0];
     }
 }

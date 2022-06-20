@@ -1,5 +1,11 @@
 .personContents {
     width: 450px;
+    background-color: yellowgreen;
+    margin-left: 2rem;
+}
+
+.mat-form-field {
+    margin-left: 2rem;
 }
 
 .mat-raised-button {

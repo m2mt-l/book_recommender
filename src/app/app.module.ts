@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent],
@@ -25,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
         MatSelectModule,
         MatFormFieldModule,
         MatInputModule,
+        FormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

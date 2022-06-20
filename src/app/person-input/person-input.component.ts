@@ -14,6 +14,12 @@ export class PersonInputComponent implements OnInit {
     genders: string[] = config.genders;
     countries: string[] = config.countries;
 
+    selectedGender: string = '';
+    selectedCountry: string = '';
+    selectedImageURL: string = '';
+    selectedAge: number = 0;
+    selectedAgeRange: string = '';
+
     constructor(private personService: PersonService, private bookService: BookService) {
         personService.personSubject?.subscribe((personSubject) => (this.person = personSubject));
     }
@@ -25,6 +31,13 @@ export class PersonInputComponent implements OnInit {
 
     getRandomPerson(): void {
         this.personService.setRandomPerson();
+        console.log('selectedGender');
+        this.selectedGender = this.person?.gender === undefined ? '' : this.person.gender;
+        this.selectedCountry = this.person?.country === undefined ? '' : this.person.country;
+        this.selectedImageURL = this.person?.imageURL === undefined ? '' : this.person.imageURL;
+        this.selectedAge = this.person?.age === undefined ? 0 : this.person.age;
+        this.selectedAgeRange = this.person?.ageRange === undefined ? '' : this.person.ageRange;
+
     }
     ngOnInit(): void {}
 }

@@ -5,5 +5,5 @@ interface Config {
 
 export const config: Config = {
     genders: ['male', 'female'],
-    countries: ['Australia', 'Brazil', 'France', 'Others'],
+    countries: ['Australia', 'Brazil', 'France', 'Other'],
 };

@@ -1,1 +1,17 @@
-<p>book-list works!</p>
+<div class="bookContents">
+    <div class="bookList">
+        <div *ngFor="let book of getAllBookList(); let i = index" [attr.data-index]="i">
+            <a routerLink="/book-list/{{ i }}" routerLinkActive="active-link">
+                {{ book.title }}, {{ book.author }}, {{ book.pubDate }}
+            </a>
+        </div>
+    </div>
+    <div class="bookDetail">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<!-- <app-book-detail></app-book-detail>
+ -->
+<!-- routerLink="/book-list"
+routerLinkActive="active-link"
+ -->

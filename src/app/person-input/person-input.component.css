@@ -1,18 +1,8 @@
-.personInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.personContents {
+    width: 450px;
 }
 
-.personInfoText {
-    padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    text-align: left;
-}
-
-.mat-raised-button  {
+.mat-raised-button {
     margin-left: 1rem;
     margin-right: 1rem;
 }

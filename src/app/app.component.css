@@ -3,4 +3,54 @@
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.personInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.personInfoText {
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.bookList {
+    display: flex;
+    flex-direction: column;
+}
+
+.bookDetail {
+    display: flex;
+    flex-direction: column;
+}
+
+.bookList {
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bookDetail {
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bookContent {
+    width: 900px;
 }

@@ -41,4 +41,18 @@ export const topicTable: { [key: string]: { [key: string]: { [key: string]: stri
             female: 'Sculpture',
         },
     },
+    Other: {
+        child: {
+            male: 'Business',
+            female: 'Geology',
+        },
+        teen: {
+            male: 'Music',
+            female: 'Sculpture',
+        },
+        adult: {
+            male: 'Mystery',
+            female: 'Snow',
+        },
+    },
 };

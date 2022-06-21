@@ -43,6 +43,14 @@ export class PersonInputComponent implements OnInit {
     }
 
     getRecommendTopic(): string {
+        const person = new Person(
+            this.selectedGender,
+            this.selectedCountry,
+            this.selectedImageURL,
+            this.selectedAge
+        );
+        this.personService.setPerson(person);
+        this.selectedAgeRange = this.person?.ageRange === undefined ? '' : this.person.ageRange;
         return topicTable[this.selectedCountry][this.selectedAgeRange][this.selectedGender];
     }
 

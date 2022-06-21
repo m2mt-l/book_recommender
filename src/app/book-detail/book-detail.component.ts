@@ -33,4 +33,9 @@ export class BookDetailComponent implements OnInit {
         this.book$.subscribe((x) => (book = x));
         return book;
     }
+
+    getIsbn(): string {
+        const isbn: number = this.subscribeBook().isbn;
+        return isbn === -1 ? 'None' : String(isbn);
+    }
 }

@@ -4,6 +4,7 @@ import { BookService } from '../book.service';
 import { Person } from '../model/person';
 import { Observable } from 'rxjs';
 import { config } from '../data/config';
+import { topicTable } from '../data/topicTable';
 @Component({
     selector: 'app-person-input',
     templateUrl: './person-input.component.html',
@@ -24,9 +25,9 @@ export class PersonInputComponent implements OnInit {
         personService.personSubject?.subscribe((personSubject) => (this.person = personSubject));
     }
 
-    getStaticPerson(): void {
-        this.personService.setStaticPerson1();
-        this.bookService.getBookList('Law');
+    submitTopic(): void {
+        const topic: string = this.getRecommendTopic();
+        this.bookService.getBookList(topic);
     }
 
     getRandomPerson(): void {
@@ -37,7 +38,11 @@ export class PersonInputComponent implements OnInit {
         this.selectedImageURL = this.person?.imageURL === undefined ? '' : this.person.imageURL;
         this.selectedAge = this.person?.age === undefined ? 0 : this.person.age;
         this.selectedAgeRange = this.person?.ageRange === undefined ? '' : this.person.ageRange;
-
     }
+
+    getRecommendTopic(): string {
+        return topicTable[this.selectedCountry][this.selectedAgeRange][this.selectedGender];
+    }
+
     ngOnInit(): void {}
 }

@@ -1,6 +1,6 @@
 .personContents {
     width: 450px;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     margin-left: 2rem;
     display: flex;
     flex-direction: column;

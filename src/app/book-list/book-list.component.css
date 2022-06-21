@@ -6,13 +6,16 @@
 .bookList {
     width: 450px;
     background-color: aqua;
-    margin-right: 2rem;
     display: flex;
     flex-direction: column;
+    margin-right: 1rem;
+}
+
+.bookTitle {
+    margin-bottom: 1rem;
 }
 
 .bookDetail {
     width: 450px;
-    margin-left: 2rem;
     background-color: aquamarine;
 }

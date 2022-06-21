@@ -1,21 +1,23 @@
 <h1 routerLink="/" routerLinkActive="active-link" class="title">{{ title }}</h1>
-<div class="dashboard">
-    <div class="personInfo">
-        <div class="personInfoText">
-            <h2>Person</h2>
+<div>
+    <div class="dashboard">
+        <div class="personInfo">
+            <div class="personInfoText">
+                <h2>Person</h2>
+            </div>
+        </div>
+        <div class="bookList">
+            <h2>Matching Book List</h2>
+        </div>
+        <div class="bookDetail">
+            <h2>Book Detail</h2>
         </div>
     </div>
-    <div class="bookList">
-        <h2>Matching Book List</h2>
-    </div>
-    <div class="bookDetail">
-        <h2>Book Detail</h2>
-    </div>
-</div>
 
-<div class="content">
-    <app-person-input></app-person-input>
-    <div class="bookContent">
-        <router-outlet></router-outlet>
+    <div class="content">
+        <app-person-input></app-person-input>
+        <div class="bookContent">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

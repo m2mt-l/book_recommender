@@ -1,6 +1,10 @@
 <div class="bookContents">
     <div class="bookList">
-        <div *ngFor="let book of getAllBookList(); let i = index" [attr.data-index]="i">
+        <div
+            class="bookTitle"
+            *ngFor="let book of getAllBookList(); let i = index"
+            [attr.data-index]="i"
+        >
             <a routerLink="/book-list/{{ i }}" routerLinkActive="active-link">
                 {{ book.title }}, {{ book.author }}, {{ book.pubDate }}
             </a>

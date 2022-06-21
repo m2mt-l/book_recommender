@@ -26,15 +26,24 @@
 .personInfoText {
     padding: 0;
     margin-top: 1rem;
-    text-align: left;
+    background-color: yellow;
+    width: 450px;
+    text-align: center;
 }
+
 .bookList {
     display: flex;
+    background-color: wheat;
+    width: 450px;
+    text-align: center;
     flex-direction: column;
 }
 
 .bookDetail {
     display: flex;
+    background-color: steelblue;
+    width: 450px;
+    text-align: center;
     flex-direction: column;
 }
 

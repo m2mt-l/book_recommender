@@ -14,10 +14,11 @@ export class PersonInputComponent implements OnInit {
     person?: Person;
     genders: string[] = config.genders;
     countries: string[] = config.countries;
+    defaultImgUrl: string = './assets/default.jpg';
 
     selectedGender: string = '';
     selectedCountry: string = '';
-    selectedImageURL: string = '';
+    selectedImageURL: string = this.defaultImgUrl;
     selectedAge: number = 0;
     selectedAgeRange: string = '';
 
@@ -35,7 +36,8 @@ export class PersonInputComponent implements OnInit {
         console.log('selectedGender');
         this.selectedGender = this.person?.gender === undefined ? '' : this.person.gender;
         this.selectedCountry = this.person?.country === undefined ? '' : this.person.country;
-        this.selectedImageURL = this.person?.imageURL === undefined ? '' : this.person.imageURL;
+        this.selectedImageURL =
+            this.person?.imageURL === undefined ? this.defaultImgUrl : this.person.imageURL;
         this.selectedAge = this.person?.age === undefined ? 0 : this.person.age;
         this.selectedAgeRange = this.person?.ageRange === undefined ? '' : this.person.ageRange;
     }

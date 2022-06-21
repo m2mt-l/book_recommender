@@ -47,8 +47,17 @@ export class PersonService {
     }
 
     getRandomPerson(): Observable<Person> {
-        return this.http
-            .get<Person>(this.url, { observe: 'body', responseType: 'json' })
-            .pipe(map((data: any) => data.results[0]));
+        return this.http.get<Person>(this.url, { observe: 'body', responseType: 'json' }).pipe(
+            map((data: any) => data.results[0]),
+            catchError(this.handleError<Person>('getRandomPerson'))
+        );
+    }
+
+    private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+            console.error(error);
+            console.log(`${operation} failed: ${error.message}`);
+            return of(result as T);
+        };
     }
 }

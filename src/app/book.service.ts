@@ -36,7 +36,10 @@ export class BookService {
         const url = this.url + topic + '&limit=5';
         this.http
             .get<Book>(url, { observe: 'body', responseType: 'json' })
-            .pipe(map((data: any) => data.docs))
+            .pipe(
+                map((data: any) => data.docs),
+                catchError(this.handleError<Book>('getBookList'))
+            )
             .subscribe((data: any) => this.setBookInfo(data));
     }
 
@@ -61,5 +64,13 @@ export class BookService {
     setIsbn(isbn: any): number {
         if (isbn === undefined) return -1;
         else return isbn[0];
+    }
+
+    private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+            console.error(error);
+            console.log(`${operation} failed: ${error.message}`);
+            return of(result as T);
+        };
     }
 }

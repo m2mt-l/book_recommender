@@ -5,10 +5,9 @@
 
 .bookList {
     width: 450px;
-    background-color: aqua;
+/*     background-color: aqua; */
     display: flex;
     flex-direction: column;
-    margin-right: 1rem;
 }
 
 .bookTitle {
@@ -17,5 +16,5 @@
 
 .bookDetail {
     width: 450px;
-    background-color: aquamarine;
+/*     background-color: aquamarine; */
 }

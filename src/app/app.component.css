@@ -25,8 +25,7 @@
 
 .personInfoText {
     padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
     text-align: left;
 }
 .bookList {
@@ -41,14 +40,12 @@
 
 .bookList {
     padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .bookDetail {
     padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .bookContent {

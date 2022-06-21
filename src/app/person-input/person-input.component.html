@@ -32,15 +32,22 @@
     </div>
 
     <div class="getPersonButton">
-        <button
-            mat-raised-button
-            color="primary"
-            routerLink="/book-list"
-            routerLinkActive="active-link"
-            (click)="submitTopic()"
-        >
-            Submit
-        </button>
+        <div *ngIf="isAbleToSubmit(); then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock>
+            <button
+                mat-raised-button
+                color="primary"
+                routerLink="/book-list"
+                routerLinkActive="active-link"
+                (click)="submitTopic()"
+            >
+                Submit
+            </button>
+        </ng-template>
+        <ng-template #elseBlock>
+            <button mat-raised-button color="primary" disabled>Submit</button>
+        </ng-template>
+
         <button mat-stroked-button color="primary" (click)="getRandomPerson()">
             Get Random Person
         </button>

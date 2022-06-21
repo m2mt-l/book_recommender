@@ -46,5 +46,9 @@ export class PersonInputComponent implements OnInit {
         return topicTable[this.selectedCountry][this.selectedAgeRange][this.selectedGender];
     }
 
+    isAbleToSubmit(): boolean {
+        return this.selectedGender !== '' && this.selectedCountry !== '' && this.selectedAge !== 0;
+    }
+
     ngOnInit(): void {}
 }

@@ -5,16 +5,19 @@
 
 .bookList {
     width: 450px;
-/*     background-color: aqua; */
+    /*     background-color: aqua; */
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.bookTitle {
+.bookList .bookTitle {
     margin-bottom: 1rem;
+    text-align: left;
+    display: inline-block;
 }
 
 .bookDetail {
     width: 450px;
-/*     background-color: aquamarine; */
+    /*     background-color: aquamarine; */
 }

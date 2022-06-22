@@ -8,7 +8,7 @@ import { Book } from './model/book';
 })
 export class BookService {
     bookList: Book[] = [];
-    url: string = 'http://openlibrary.org/search.json?title=';
+    url: string = 'https://openlibrary.org/search.json?title=';
 
     book: Book = {
         title: '',

@@ -15,9 +15,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
-    declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent],
+    declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent, SpinnerComponent],
     imports: [
         BrowserModule,
         HttpClientModule,

@@ -1,14 +1,14 @@
 .personContents {
     width: 450px;
-/*     background-color: yellowgreen; */
+    /*     background-color: yellowgreen; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .picture {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;

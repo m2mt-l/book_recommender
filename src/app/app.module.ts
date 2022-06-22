@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
     declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent],
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
         MatFormFieldModule,
         MatInputModule,
         FormsModule,
+        MatProgressSpinnerModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

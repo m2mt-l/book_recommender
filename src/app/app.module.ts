@@ -16,9 +16,18 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerInterceptor } from './spinner/spinner-interceptor';
+import { SpinnerService } from './spinner.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
-    declarations: [AppComponent, PersonInputComponent, BookListComponent, BookDetailComponent, SpinnerComponent],
+    declarations: [
+        AppComponent,
+        PersonInputComponent,
+        BookListComponent,
+        BookDetailComponent,
+        SpinnerComponent,
+    ],
     imports: [
         BrowserModule,
         HttpClientModule,
@@ -31,7 +40,14 @@ import { SpinnerComponent } from './spinner/spinner.component';
         FormsModule,
         MatProgressSpinnerModule,
     ],
-    providers: [],
+    providers: [
+        SpinnerService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: SpinnerInterceptor,
+            multi: true,
+        },
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,16 @@
-# BookRecommender
+# Book Recommender
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+This project is for Recursion Angular project and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+
+## URL
+
+https://m2mt-l.github.io/book_recommender/
+
+## Description
+
+Input user information, such as gender, country and age, then return matching book lists. You can input the information manually or pick radom user information.
+
+<img width="1269" alt="Screen Shot 2022-06-22 at 23 24 05" src="https://user-images.githubusercontent.com/6548931/175053551-26eb8374-38ec-47bf-9d66-a0f69109ea58.png">
 
 ## Development server
 
